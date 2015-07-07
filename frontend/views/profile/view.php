@@ -14,14 +14,22 @@ $this->params['breadcrumbs'][] = $this->title;
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        <?= Html::a('Update', ['update', 'id' => $profile->id], ['class' => 'btn btn-primary']) ?>
+        <?= Html::a('Update', ['update-profile', 'id' => Yii::$app->user->getId()], ['class' => 'btn btn-primary']) ?>
     </p>
 
     <?= DetailView::widget([
         'model' => $profile,
         'attributes' => [
             'fullname',
-            'email:email',
+            [
+                'attribute'=>'email',
+                'format'=>'raw',
+                'value'=>$profile->statusVerified($profile->user_id)
+            ],
+            [
+                'attribute'=>'gender',
+                'value'=> ($profile->gender == 1) ? 'Laki-Laki' : (($profile->gender == 2) ? 'Perempuan' : '')
+            ],
             'phone',
             'address',
             'province',

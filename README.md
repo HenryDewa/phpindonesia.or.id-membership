@@ -55,9 +55,16 @@ the installed application. You only need to do these once for all.
 
    Lihat di : https://github.com/yiisoft/yii2-app-advanced/blob/master/docs/guide/start-installation.md
    
+## Kontribusi
+
+Silakan ikuti link [berikut](docs/guide-id/git-workflow.md).
+
+
 Progress Summary
 ----------------
 ### Database design & Models
+* [ERD](docs/guide-id/app-database-erd.md)
+
 1.0 Initiation version - http://git.io/vq3Ta
 
 1. users
